@@ -27,6 +27,16 @@ public class PlayerState
 
     public virtual void LogicUpdate()
     {
+        //change to dizzy state
+        if(stateMachine.curState != player.deadState && stateMachine.curState != player.dizzyState)
+        {
+
+        }
+        //change to dead state
+        if(stateMachine.curState != player.deadState && player.collideWave)
+        {
+            stateMachine.switchState(player.deadState);
+        }
 
     }
 

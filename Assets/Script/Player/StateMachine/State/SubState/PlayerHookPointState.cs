@@ -17,11 +17,13 @@ public class PlayerHookPointState : PlayerAfterHookState
     {
         base.Enter();
         player.hookEnd.rb.velocity = Vector2.zero;
+        player.col.isTrigger = true;
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.col.isTrigger = false;
     }
 
     public override void LogicUpdate()

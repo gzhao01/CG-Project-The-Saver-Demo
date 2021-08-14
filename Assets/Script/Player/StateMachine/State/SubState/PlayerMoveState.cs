@@ -44,4 +44,5 @@ public class PlayerMoveState : PlayerBaseState
         base.PhysicUpdate();
         player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed;
     }
+
 }

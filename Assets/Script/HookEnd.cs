@@ -19,6 +19,7 @@ public class HookEnd : MonoBehaviour
     private GameObject touchObject;
     public Vector2 hookEnd2PlayerDir { get; private set; }
 
+    private SpriteRenderer sr;
     private LineRenderer lr;
     public Rigidbody2D rb { get; private set; }
 
@@ -27,6 +28,7 @@ public class HookEnd : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         lr = GetComponent<LineRenderer>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -34,6 +36,7 @@ public class HookEnd : MonoBehaviour
     {
         lr.SetPosition(0,hookStart.transform.position);
         lr.SetPosition(1,transform.position);
+        lr.material.SetTexture("_MainTex",sr.sprite.texture);
     }
 
     private void FixedUpdate()

@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     public PlayerHookPeopleState hookPeopleState { get; private set; }
     public PlayerHookPointState hookPointState { get; private set; }
     public PlayerHookNullState hookNullState { get; private set; }
+    public PlayerDeadState deadState { get; private set; }
+    public PlayerDizzyState dizzyState { get; private set; }
 
     [Header("Move")]
     public float moveSpeed;
@@ -27,6 +29,10 @@ public class Player : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public HookEnd hookEnd;
+    public BoxCollider2D col { get; private set; }
+
+    //collide
+    public bool collideWave;
 
     private void Awake()
     {
@@ -38,6 +44,9 @@ public class Player : MonoBehaviour
         hookPeopleState = new PlayerHookPeopleState(this, stateMachine, "HookPeople");
         hookPointState = new PlayerHookPointState(this, stateMachine, "HookPoint");
         hookNullState = new PlayerHookNullState(this, stateMachine, "HookNull");
+        deadState = new PlayerDeadState(this, stateMachine, "Dead");
+        dizzyState = new PlayerDizzyState(this, stateMachine, "Dizzy");
+
     }
 
     private void Start()
@@ -45,6 +54,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponentInChildren<Animator>();
         hookEnd = hookEndTransform.GetComponent<HookEnd>();
+        col = GetComponent<BoxCollider2D>();
 
         faceDirection = 1; //face right default
         //init state machine
@@ -66,5 +76,15 @@ public class Player : MonoBehaviour
     {
         faceDirection *= -1;
         transform.Rotate(0, -180, 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        //collide wave, game over
+        if(collision.tag == "Wave")
+        {
+            collideWave = true;
+        }
+
     }
 }
