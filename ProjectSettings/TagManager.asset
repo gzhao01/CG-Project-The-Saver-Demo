@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Point
   - People
+  - Wave
+  - SendSavedPoint
   layers:
   - Default
   - TransparentFX
@@ -16,10 +18,10 @@ TagManager:
   - Player
   - HookEnd
   - HookObj
-  - 
-  - 
-  - 
-  - 
+  - SendSavedPoint
+  - RenderWater
+  - HookDirection
+  - Wave
   - 
   - 
   - 
@@ -48,4 +50,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 2814821393
+    locked: 0
+  - name: Foreground
+    uniqueID: 2502334833
     locked: 0
