@@ -26,6 +26,13 @@ public class Player : MonoBehaviour
     public float hookBackSpeed;
     public float hookFireTime;
 
+    //debuff
+    public int savingPeopleNum = 0;
+    public float speedMulti = 1;//default 1
+    public float fireHookSpeedMulti = 1;
+    public float hookBackSpeedMulti = 1;
+
+    //component
     public Rigidbody2D rb { get; private set; }
     public Animator anim { get; private set; }
     public HookEnd hookEnd;
@@ -78,12 +85,32 @@ public class Player : MonoBehaviour
         transform.Rotate(0, -180, 0);
     }
 
+    public void AddDebuff()
+    {
+        speedMulti -= 0.1f;
+        hookBackSpeedMulti -= 0.1f;
+        fireHookSpeedMulti -= 0.1f;
+    }
+
+    public void DebuffReset()
+    {
+        speedMulti =1f;
+        hookBackSpeedMulti = 1f;
+        fireHookSpeedMulti = 1f;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         //collide wave, game over
         if(collision.tag == "Wave")
         {
             collideWave = true;
+        }
+        if(collision.tag == "SendSavedPoint" && savingPeopleNum !=0)
+        {
+            DebuffReset();
+            GameManager.Instance.AddSaveCount(savingPeopleNum);
+            savingPeopleNum = 0;
         }
 
     }

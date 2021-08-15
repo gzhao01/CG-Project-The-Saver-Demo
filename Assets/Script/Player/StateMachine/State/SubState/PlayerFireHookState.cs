@@ -53,6 +53,6 @@ public class PlayerFireHookState : PlayerState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-        player.hookEnd.rb.velocity = player.hookEndTransform.right * player.hookFireSpeed;
+        player.hookEnd.rb.velocity = player.hookEndTransform.right * player.hookFireSpeed * player.fireHookSpeedMulti;
     }
 }

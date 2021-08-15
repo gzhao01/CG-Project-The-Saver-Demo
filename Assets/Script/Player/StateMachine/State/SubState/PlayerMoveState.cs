@@ -33,8 +33,6 @@ public class PlayerMoveState : PlayerBaseState
         }
         if (InputHandler.Instance.moveInput.x!=0 && InputHandler.Instance.moveInput.x * player.faceDirection < 0)
         {
-            Debug.Log(InputHandler.Instance.moveInput.x);
-            Debug.Log(player.faceDirection);
             player.Flip();
         }
     }
@@ -42,7 +40,8 @@ public class PlayerMoveState : PlayerBaseState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed;
+        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed * player.speedMulti;
+
     }
 
 }

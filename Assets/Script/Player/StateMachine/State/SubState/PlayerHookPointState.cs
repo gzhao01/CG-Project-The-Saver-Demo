@@ -40,6 +40,6 @@ public class PlayerHookPointState : PlayerAfterHookState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-        player.rb.velocity = player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed;
+        player.rb.velocity = player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed * player.hookBackSpeedMulti;
     }
 }

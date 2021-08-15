@@ -15,11 +15,24 @@ public class InputHandler : MonoBehaviour
 
     public bool fireHook { get; private set; }
 
+    public float triggerTime = 0.2f;
+    private float lastTriggerTime;
+
     [SerializeField] private Camera mainCam;
     private void Awake()
     {
         if(Instance == null)
             Instance = this;
+    }
+
+    private void Start()
+    {
+        //Cursor.visible = false;
+    }
+
+    private void Update()
+    {
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -39,8 +52,7 @@ public class InputHandler : MonoBehaviour
         }
         if (context.canceled)
         {
-
-
+            fireHook = false;
         }
     }
 

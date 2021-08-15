@@ -17,11 +17,19 @@ public class PlayerHookPeopleState : PlayerAfterHookState
     {
         base.Enter();
         player.hookEnd.rb.velocity = Vector2.zero;
+        // 显示debuff
+        GameManager.Instance.ShowDebuff(true);
     }
 
     public override void Exit()
     {
         base.Exit();
+        player.savingPeopleNum++;
+        player.AddDebuff();
+        // 隐藏debuff、增加得分与救人数
+        
+        GameManager.Instance.AddPoints();
+        GameManager.Instance.ShowDebuff(false);
     }
 
     public override void LogicUpdate()
@@ -39,7 +47,7 @@ public class PlayerHookPeopleState : PlayerAfterHookState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed;
-        player.hookEnd.rb.velocity = -player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed;
+        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed * player.speedMulti;
+        player.hookEnd.rb.velocity = -player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed * player.hookBackSpeedMulti;
     }
 }

@@ -22,7 +22,7 @@ public class PlayerState
     {
         startTime = Time.time;
         player.anim.SetBool(animBoolName, true);
-        Debug.Log("enter " + animBoolName);
+        //Debug.Log("enter " + animBoolName);
     }
 
     public virtual void LogicUpdate()

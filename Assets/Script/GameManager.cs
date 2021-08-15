@@ -8,6 +8,11 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
 
+    public int saveCount;
+    public int pointPerMan = 10;
+    public int currentPoint = 0;
+    public GameObject debuffObj;
+
     public float restartDelay;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +21,9 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
         }
+        saveCount = 0;
+        currentPoint = 0;
+        ShowDebuff(false);
     }
 
     // Update is called once per frame
@@ -63,5 +71,47 @@ public class GameManager : MonoBehaviour
     public void LoadScene3()
     {
         SceneManager.LoadScene(3);
+    }
+
+
+    // 得分
+    public void AddPoints()
+    {
+        currentPoint += pointPerMan;
+        HUDManager.m_Instance.UpdatePoint(currentPoint);
+    }
+    
+    // 救人
+    public void AddSaveCount()
+    {
+        saveCount++;
+        HUDManager.m_Instance.UpdateSaveCount(saveCount);
+    }
+
+    public void AddSaveCount(int saveCount)
+    {
+        this.saveCount += saveCount;
+        HUDManager.m_Instance.UpdateSaveCount(this.saveCount);
+    }
+
+    public void ShowDebuff(bool isShow)
+    {
+        debuffObj.SetActive(isShow);
+    }
+
+    // 场景切换
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void BackToStart()
+    {
+        SceneManager.LoadScene("Start");
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("quit");
     }
 }

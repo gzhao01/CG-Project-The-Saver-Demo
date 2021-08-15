@@ -40,7 +40,7 @@ public class PlayerHookNullState : PlayerAfterHookState
     public override void PhysicUpdate()
     {
         base.PhysicUpdate();
-        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed;
-        player.hookEnd.rb.velocity = -player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed;
+        player.rb.velocity = InputHandler.Instance.moveInput * player.moveSpeed * player.speedMulti;
+        player.hookEnd.rb.velocity = -player.hookEnd.hookEnd2PlayerDir * player.hookBackSpeed * player.hookBackSpeedMulti;
     }
 }
