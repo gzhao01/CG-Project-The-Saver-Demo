@@ -38,4 +38,14 @@ public class PauseMenu : MonoBehaviour
         menuUI.SetActive(false);
         Time.timeScale = 1f;
     }
+
+    public void Restart()
+    {
+        GameManager.Instance.RestartGame();
+    }
+
+    public void Quit()
+    {
+        GameManager.Instance.QuitGame();        
+    }
 }

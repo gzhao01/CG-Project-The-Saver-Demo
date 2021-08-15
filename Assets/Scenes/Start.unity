@@ -156,6 +156,7 @@ MonoBehaviour:
   pointPerMan: 10
   currentPoint: 0
   debuffObj: {fileID: 0}
+  nextLevelNeedNum: 10
   restartDelay: 0
 --- !u!4 &403692558
 Transform:
@@ -553,9 +554,17 @@ PrefabInstance:
       value: 63.7
       objectReference: {fileID: 0}
     - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ca1e3f73106b9974c8b5e7584287650b, type: 2}
+    - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
       propertyPath: m_fontSizeBase
       value: 63.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3827927697702293482, guid: ca1e3f73106b9974c8b5e7584287650b, type: 2}
     - target: {fileID: 3087128746170711864, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
       propertyPath: m_Name
       value: StartBt
@@ -695,9 +704,17 @@ PrefabInstance:
       value: 63.7
       objectReference: {fileID: 0}
     - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ca1e3f73106b9974c8b5e7584287650b, type: 2}
+    - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
       propertyPath: m_fontSizeBase
       value: 63.7
       objectReference: {fileID: 0}
+    - target: {fileID: 2852185634276207439, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3827927697702293482, guid: ca1e3f73106b9974c8b5e7584287650b, type: 2}
     - target: {fileID: 3087128746170711864, guid: 8d4e615150911a14692a11f6c44545f8, type: 3}
       propertyPath: m_Name
       value: QuitBt

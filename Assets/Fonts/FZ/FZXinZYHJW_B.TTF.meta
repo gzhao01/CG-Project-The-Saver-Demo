@@ -1,0 +1,30 @@
+fileFormatVersion: 2
+guid: c25fa81c90ca89946a38432b38daeb92
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - FZXinZongYiHeiS
+  fallbackFontReferences:
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {fileID: 12800000, guid: d01735ed051608145be39d88e2b335e1, type: 3}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  - {instanceID: 0}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

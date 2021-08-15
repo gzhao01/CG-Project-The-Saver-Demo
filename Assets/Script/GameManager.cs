@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public int currentPoint = 0;
     public GameObject debuffObj;
 
+    public int nextLevelNeedNum=0;
+
+
     public float restartDelay;
     // Start is called before the first frame update
     void Start()
@@ -29,7 +32,10 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(saveCount == nextLevelNeedNum)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public void FreezeTime(float duration)
@@ -102,7 +108,7 @@ public class GameManager : MonoBehaviour
     // ³¡¾°ÇÐ»»
     public void StartGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("Tutorial");
     }
 
     public void BackToStart()
@@ -113,5 +119,6 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
         Debug.Log("quit");
+        Application.Quit();
     }
 }

@@ -121,6 +121,22 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "ShowDialog",
+                    "type": "Button",
+                    "id": "51406a93-875e-42c5-aec0-c9ed847c0f53",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "ShowNextSentence",
+                    "type": "Button",
+                    "id": "a26d4369-89b3-4b3d-b109-702cbe1562f5",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -132,6 +148,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "faf86359-6dce-4b3f-857c-541bbb671dc7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowDialog",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7acf9fa-41f4-4b75-8b75-4eecb09e1455",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowNextSentence",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
