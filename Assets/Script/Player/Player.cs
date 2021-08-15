@@ -87,7 +87,7 @@ public class Player : MonoBehaviour
 
     public void AddDebuff()
     {
-        speedMulti -= 0.1f;
+        speedMulti -= 0.2f;
         hookBackSpeedMulti -= 0.1f;
         fireHookSpeedMulti -= 0.1f;
     }

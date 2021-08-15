@@ -50,6 +50,28 @@ public class HookEnd : MonoBehaviour
         {
             transform.position = touchObject.transform.position;
         }
+        if((transform.position - hookStart.transform.position).magnitude < 0.1f && afterHook && touchPoint)
+        {
+            afterHook = false;
+            touchPoint = false;
+            touchObject = null;
+            touchPlayer = true;
+        }
+        else if ((transform.position - hookStart.transform.position).magnitude < 0.1f && afterHook && touchPeople)
+        {
+            afterHook = false;
+            touchPeople = false;
+            Destroy(touchObject);
+            touchObject = null;
+            touchPlayer = true;
+        }
+        else if((transform.position - hookStart.transform.position).magnitude < 0.1f && afterHook && touchNull)
+        {
+            afterHook = false;
+            touchNull = false;
+            touchObject = null;
+            touchPlayer = true;
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -66,28 +88,28 @@ public class HookEnd : MonoBehaviour
             touchPoint = true;
             touchObject = collision.gameObject;
         }
-        else if(afterHook && collision.tag == "Player" && touchPeople)
-        {
-            afterHook = false;
-            touchPeople = false;
-            Destroy(touchObject);
-            touchObject = null;
-            touchPlayer = true;
-        }
-        else if(afterHook && collision.tag == "Player" && touchPoint)
-        {
-            afterHook = false;
-            touchPoint = false;
-            touchObject = null;
-            touchPlayer = true;
-        }
-        else if(afterHook && collision.tag == "Player" && touchNull)
-        {
-            afterHook = false;
-            touchNull = false;
-            touchObject = null;
-            touchPlayer = true;
-        }
+        //else if(afterHook && collision.tag == "Player" && touchPeople)
+        //{
+        //    afterHook = false;
+        //    touchPeople = false;
+        //    Destroy(touchObject);
+        //    touchObject = null;
+        //    touchPlayer = true;
+        //}
+        //else if(afterHook && collision.tag == "Player" && touchPoint)
+        //{
+        //    afterHook = false;
+        //    touchPoint = false;
+        //    touchObject = null;
+        //    touchPlayer = true;
+        //}
+        //else if(afterHook && collision.tag == "Player" && touchNull)
+        //{
+        //    afterHook = false;
+        //    touchNull = false;
+        //    touchObject = null;
+        //    touchPlayer = true;
+        //}
     }
 
 }
